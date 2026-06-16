@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prince Premium | Sports Wear & Apparel Industry</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            color: #2d3748;
+            line-height: 1.6;
+            background-color: #f7fafc;
+            padding-bottom: 60px; /* Space for WhatsApp button */
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: #fff;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+        .logo {
+            font-size: 26px;
+            font-weight: 800;
+            color: #1a365d;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        .logo span {
+            color: #e53e3e;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        .nav-links li {
+            margin-left: 25px;
+        }
+        .nav-links a {
+            font-weight: 600;
+            color: #4a5568;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover {
+            color: #e53e3e;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.85)), url('https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1200') no-repeat center center/cover;
+            height: 65vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            padding: 20px;
+        }
+        .hero-content {
+            max-width: 800px;
+        }
+        .hero-content h1 {
+            font-size: 52px;
+            margin-bottom: 15px;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+        .hero-content p {
+            font-size: 22px;
+            margin-bottom: 30px;
+            color: #e2e8f0;
+        }
+        .badge {
+            background-color: #e53e3e;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        .btn {
+            background-color: #e53e3e;
+            color: #fff;
+            padding: 14px 35px;
+            border-radius: 5px;
+            font-weight: 700;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            display: inline-block;
+        }
+        .btn:hover {
+            background-color: #c53030;
+            transform: translateY(-2px);
+        }
+
+        /* Sections General */
+        section {
+            padding: 70px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 34px;
+            margin-bottom: 40px;
+            position: relative;
+            color: #1a365d;
+            text-transform: uppercase;
+            font-weight: 800;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #e53e3e;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Products Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+        .product-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+            border: 1px solid #edf2f7;
+            text-align: center;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        }
+        .product-img {
+            height: 240px;
+            background-color: #edf2f7;
+            background-size: cover;
+            background-position: center;
+        }
+        .product-info {
+            padding: 20px;
+        }
+        .product-info h3 {
+            margin-bottom: 8px;
+            color: #1a365d;
+            font-size: 20px;
+        }
+        .product-info p {
+            font-size: 14px;
+            color: #4a5568;
+        }
+
+        /* Order Booking Forms Section */
+        .order-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-top: 20px;
+        }
+        .order-box {
+            background: #fff;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+            border: 1px solid #edf2f7;
+        }
+        .order-box.wholesale-box {
+            border-top: 6px solid #1a365d;
+        }
+        .order-box.retail-box {
+            border-top: 6px solid #e53e3e;
+        }
+        .order-box h3 {
+            font-size: 22px;
+            color: #1a365d;
+            margin-bottom: 20px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        .form-group {
+            margin-bottom: 18px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            font-size: 14px;
+            color: #4a5568;
+        }
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e0;
+            border-radius: 6px;
+            font-size: 15px;
+            background-color: #f7fafc;
+        }
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+            outline: none;
+            border-color: #e53e3e;
+            background-color: #fff;
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            z-index: 999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background-color: #20ba59;
+        }
+        .whatsapp-float span {
+            font-size: 28px;
+        }
+
+        /* Footer */
+        footer {
+            background: #0f172a;
+            color: #94a3b8;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+            font-size: 14px;
+        }
+        footer strong {
+            color: #fff;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero-content h1 { font-size: 34px; }
+            .hero-content p { font-size: 18px; }
+            .order-container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="https://wa.me/919339874507?text=Hello%20Prince%20Premium!%20Mujhe%20aapke%20products%20ke%20baare%20mein%20puchna%20hai." class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
+        <span>🗪</span>
+    </a>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">Prince<span>Premium</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#catalogues">New Catalogues</a></li>
+                <li><a href="#booking">Order Book</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="hero" id="home">
+        <div class="hero-content">
+            <div class="badge">Wholesale & Retail Store</div>
+            <h1>Prince Premium</h1>
+            <p>High-Quality Sports Trousers, Petticoats, T-Shirts & Windcheater Jackets</p>
+            <a href="#booking" class="btn">Book Online Order</a>
+        </div>
+    </div>
+
+    <section id="products">
+        <h2 class="section-title">Our Main Products</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=400');"></div>
+                <div class="product-info"><h3>Sports Trousers</h3><p>Stretchable track pants for premium comfort.</p></div>
+            </div>
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=400');"></div>
+                <div class="product-info"><h3>Premium T-Shirts</h3><p>High-grade fabric in wholesale and retail prices.</p></div>
+            </div>
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1551028719-00167b16eac5?q=80&w=400');"></div>
+                <div class="product-info"><h3>Windcheater Jackets</h3><p>Lightweight, strong wind and water protection.</p></div>
+            </div>
+            <div class="product-card">
+                <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=400');"></div>
+                <div class="product-info"><h3>Cotton Petticoats</h3><p>Pure breathable cotton fabric with tight stitching.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="catalogues" style="background-color: #edf2f7; max-width: 100%;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <h2 class="section-title">Latest Collections / Naye Catalogues</h2>
+            <p style="text-align: center; margin-bottom: 40px; color: #4a5568;">Hamare naye designs aur naye stock ki jhalak yahan dekhein:</p>
+            
+            <div class="product-grid">
+                <div class="product-card" style="border: 2px dashed #cbd5e0;">
+                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1508445822-a8e2d3d16a78?q=80&w=400');"></div>
+                    <div class="product-info">
+                        <span style="background: #2b6cb0; color: white; padding: 2px 8px; font-size: 11px; font-weight: bold; border-radius: 4px;">NEW ARRIVAL</span>
+                        <h3 style="margin-top: 5px;">Summer Tracksuit Catalogue</h3>
+                        <p>Wholesale special design package for sports academies.</p>
+                    </div>
+                </div>
+
+                <div class="product-card" style="border: 2px dashed #cbd5e0;">
+                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1544441893-675973e31985?q=80&w=400');"></div>
+                    <div class="product-info">
+                        <span style="background: #2b6cb0; color: white; padding: 2px 8px; font-size: 11px; font-weight: bold; border-radius: 4px;">NEW ARRIVAL</span>
+                        <h3 style="margin-top: 5px;">Premium Jackets Volume 2</h3>
+                        <p>Heavy winchester and wind protection stock for winter/rain.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking">
+        <h2 class="section-title">Online Order Booking Desk</h2>
+        <p style="text-align: center; margin-bottom: 40px; color: #4a5568;">Apne business ya personal use ke hisaab se sahi form chun kar apna order book karein:</p>
+        
+        <div class="order-container">
+            
+            <div class="order-box wholesale-box">
+                <h3>🗲 Wholesale Bulk Booking (Thok Order)</h3>
+                <form action="#" method="POST" onsubmit="alert('Wholesale Booking Received! Hum jald hi aapke Business / Shop par sampark karenge.'); return false;">
+                    <div class="form-group">
+                        <label>Dukan / Company Ka Naam</label>
+                        <input type="text" required placeholder="Enter Shop / Firm Name">
+                    </div>
+                    <div class="form-group">
+                        <label>Wholesaler Ka Naam</label>
+                        <input type="text" required placeholder="Enter Your Full Name">
+                    </div>
+                    <div class="form-group">
+                        <label>Mobile / WhatsApp No.</label>
+                        <input type="tel" required placeholder="Enter Mobile Number">
+                    </div>
+                    <div class="form-group">
+                        <label>Product Ka Chunaav</label>
+                        <select required>
+                            <option value="">-- Select Product --</option>
+                            <option value="trousers">Sports Trousers (Bulk)</option>
+                            <option value="tshirts">T-Shirts (Bulk)</option>
+                            <option value="jackets">Windcheater Jackets (Bulk)</option>
+                            <option value="petticoats">Petticoats (Bulk)</option>
+                            <option value="mix">Mix Items Order</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Bulk Quantity & Sizing Detail</label>
+                        <textarea rows="3" required placeholder="Jaise: Sports Trouser - 200 Pieces (M, L, XL), T-shirt - 500 Pieces..."></textarea>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%; background-color: #1a365d;">Submit Wholesale Booking</button>
+                </form>
+            </div>
+
+            <div class="order-box retail-box">
+                <h3>🛍 Retail Direct Order (Chutkar Order)</h3>
+                <form action="#" method="POST" onsubmit="alert('Retail Order Booked! Hum packing aur delivery ke liye aapse baat karenge.'); return false;">
+                    <div class="form-group">
+                        <label>Customer Ka Naam</label>
+                        <input type="text" required placeholder="Enter Your Name">
+                    </div>
+                    <div class="form-group">
+                        <label>Mobile / Delivery Number</label>
+                        <input type="tel" required placeholder="Enter Mobile Number">
+                    </div>
+                    <div class="form-group">
+                        <label>Delivery Ka Pura Pata (Address)</label>
+                        <input type="text" required placeholder="Enter Full Address with Pincode">
+                    </div>
+                    <div class="form-group">
+                        <label>Kaunsa Item Chahiye?</label>
+                        <select required>
+                            <option value="">-- Select Product --</option>
+                            <option value="trouser-single">Sports Trouser (1-5 Pcs)</option>
+                            <option value="tshirt-single">Premium T-Shirt (1-5 Pcs)</option>
+                            <option value="jacket-single">Windcheater Jacket (1-2 Pcs)</option>
+                            <option value="petticoat-single">Petticoat (Single/Few Pcs)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Size aur Color ki jankari</label>
+                        <textarea rows="3" required placeholder="Jaise: Size L, Black Color, 2 track pants chahiye..."></textarea>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%;">Book Retail Order</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 <strong>Prince Premium</strong>. Quality Garments Factory. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
